@@ -886,7 +886,49 @@ body {
 
     .backdrop {
         position: fixed;
-        background-color: rgba(80, 41, 41, 0.651);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #e5e5e56e;;
+    }
+
+    .backdrop.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 450px;
+        min-height: 450px;
+        padding: 40px 30px;
+        background-color: #fff;
+        border-radius: 30px;
+        background: #FFFFFF;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 50%;
+        background: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-title {
+
     }
    
     
