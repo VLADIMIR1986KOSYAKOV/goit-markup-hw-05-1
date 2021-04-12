@@ -60,7 +60,7 @@ body {
     --tel-footer:rgba(255, 255, 255, 0.6);
     --icon-color: #AFB1B8;
     --icon-footer-color:#FFFFFF;
-    --animation: 250ms ease-in;
+    --animation: 300ms ease-in;
 
     }
 
@@ -197,7 +197,7 @@ body {
     background: #F5F4FA;
     border-radius: 4px;
     border: none;
-    transition: color var(--animation);
+    transition: color var(--animation), background-color var(--animation);
 }
 
 .button-portfolio:hover {
@@ -240,11 +240,13 @@ body {
   .social-icons-footer .icon-footer {
     width: 20px;    
     height: 20px;
+    transition: fill var(--animation);
 }
 
   .social-icons {
       display: flex;
       justify-content: center;
+      transition: fill var(--animation);
       
   }
 
@@ -252,6 +254,7 @@ body {
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
+    transition: fill var(--animation);
 }
 
   .social-icons-link {
@@ -261,6 +264,7 @@ body {
     width: 44px;
     height: 44px;
     border-radius: 50%;
+    transition: fill var(--animation);
   }
 
   .social-icons-link-footer {
@@ -271,6 +275,7 @@ body {
     height: 44px;
     background-color: rgba(255, 255, 255, 0.1);;
     border-radius: 50%;
+    transition: fill var(--animation);
   }
 
   .social-icons-link-footer:hover {
@@ -289,7 +294,8 @@ body {
   }
 
   .icon-footer {
-    fill: var(--icon-footer-color)
+    fill: var(--icon-footer-color);
+    transition: fill var(--animation);
   }
 
   .list-command a {
@@ -876,6 +882,11 @@ body {
         padding-left: 24px;
         padding-right: 24px;
           
+    }
+
+    .backdrop {
+        position: fixed;
+        background-color: rgba(80, 41, 41, 0.651);
     }
    
     
