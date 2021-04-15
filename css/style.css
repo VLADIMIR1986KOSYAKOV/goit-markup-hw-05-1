@@ -399,7 +399,8 @@ body {
 
   .client-icon-link:hover .client-icon,
   .client-icon-link:focus .client-icon {
-    fill: var(--accent-color);    
+    fill: var(--accent-color);
+    transition: color var(--transition-whole);  
   }
   
   .client-icon {
@@ -417,6 +418,7 @@ body {
     border: 1px solid #AFB1B8;
     box-sizing: border-box;
     border-radius: 4px;
+    transition: color var(--transition-whole);
   }
 
   .clients-block {
@@ -1167,6 +1169,8 @@ body {
         border-radius: 50%;
         background: #FFFFFF;
         border: 1px solid rgba(0, 0, 0, 0.1);
+        transform: scale(1);
+    transition: var(--transition-transform);
     }
 
     .is-hidden .modal {
