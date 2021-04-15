@@ -83,6 +83,10 @@ body {
     transition: color var(--transition-whole);
     }
 
+    .link-mailto:hover,
+    .link-mailto:focus {
+      stroke: currentColor;
+    }
 .link.current{
     color: var(--accent-color)   
 }
@@ -157,7 +161,7 @@ body {
 }
 
 .link-tel {
-    display: flex;
+    display: block;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
@@ -218,7 +222,7 @@ body {
     background: #F5F4FA;
     border-radius: 4px;
     border: none;
-    transition: color var(--animation), background-color var(--animation);
+    transition: box-shadow var(--transition-whole), background-color var(--transition-whole);
 }
 
 .button-portfolio:hover {
@@ -590,6 +594,7 @@ body {
     }
 
     .link .link-mailto {      
+        display: block;
         font-weight: normal;
         font-size: 14px;
         line-height: 1.71;        
@@ -598,6 +603,7 @@ body {
     }
 
     .link .tel-footer {
+        display: block;
         font-weight: normal;
         font-size: 14px;
         line-height: 1.71;      
