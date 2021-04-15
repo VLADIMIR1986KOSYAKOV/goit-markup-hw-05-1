@@ -498,17 +498,19 @@ body {
 }
 
 .button-hero {
+    display: inline-block;
     padding: 10px 32px 10px 32px;
     font-weight: bold;
     font-size: 16px;
     line-height: 1.87;    
     letter-spacing: 0.06em;
     color: #FFFFFF;
-    background: #2196F3;   
+    background-color: #2196F3;   
     border-radius: 4px;
     cursor: pointer;
     min-width: 200px;
     border: none;
+    transition: box-shadow var(--transition-whole), background-color var(--transition-whole);
         
     }
 
