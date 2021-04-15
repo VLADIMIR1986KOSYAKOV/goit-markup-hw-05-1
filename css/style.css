@@ -61,7 +61,8 @@ body {
     --icon-color: #AFB1B8;
     --icon-footer-color:#FFFFFF;
     --animation: 250ms ease-in;
-
+    --transition-transform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-whole: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
 .visually-hidden {
@@ -79,7 +80,7 @@ body {
     display: block;
     text-decoration: none;
     color: inherit;
-    transition: color var(--animation);
+    transition: color var(--transition-whole);
     }
 
 .link.current{
@@ -90,6 +91,7 @@ body {
 .link:focus
 {
     color: var(--accent-color);
+    transition: color var(--transition-whole);
 }
 
 .link .mailto-footer:hover{
@@ -134,7 +136,7 @@ body {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--mailto-color);
-    transition: color var(--animation);
+    /*transition: color var(--animation);*/
 }
 
 .link-mailto:hover .icon-letter,
@@ -172,12 +174,22 @@ body {
 }
 
 .decor::after {
-    content: "";
-    display: inline-block;   
-    width: 48px;
+    position: absolute;
+    display: flex;
+    background-color: var(--accent-color);
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 100%;
     height: 4px;
-    margin-top: 28px;
-    background-color: currentColor;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: var(--transition-transform)
+}
+
+.decor:hover::after,
+.decor:focus::after {
+  transform: scaleX(1);
 }
 
 .list,
@@ -291,7 +303,8 @@ body {
   }
 
   .social-icons-link-footer:hover {
-     color: var(--accent-color); 
+     color: var(--accent-color);
+     transition: background-color var(--transition-whole); 
   }
 
   
@@ -651,9 +664,22 @@ body {
 
    
     .container-item {
+        position: relative;
         margin-right: 50px;
         padding-top: 32px;
         padding-bottom: 32px;
+    }
+
+    .activ-studio::after {
+        position: absolute;
+        display: flex;
+        background-color: var(--accent-color);
+        content: '';
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
     }
 
     
@@ -704,10 +730,78 @@ body {
 
     .list-mark .mark-item +.mark-item {
         margin-left: 30px;
-    }
+    } 
 
+    .doing-section {
+        padding-top: 94px;
+        padding-bottom: 94px;
+      }
+
+      .container {
+        width: 1200px;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      
+    .list {
+        list-style: none;
+      }      
+      
+    .grid {
+        display: flex;
+        flex-wrap: wrap;        
+      }
+      
+      .grid-item {
+        flex-basis: calc((100% - 30px * var(--grid-item)) / var(--grid-item));
+        margin-left: -30px;
+        margin-top: 30px;
+      }
+
+      .about-item {
+        --grid-item: 3;
+      }
+
+      .doing-thumb {
+        position: relative;
+      }
+
+      .text-thumb {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.8), rgba(47, 48, 58, 0.8));
+        width: 370px;
+        height: 70px;
+      }
+
+      .text-decor-thumb {
+        font-weight: 700;
+        color: #fff;
+        text-transform: uppercase;
+      }
+
+
+      .whatwe-do-title {
+        display: flex;
+        margin-bottom: 50px;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.16;
+        text-align: center;
+        letter-spacing: 0.03em;
+        }
+
+        .title {
+            color: var(--title-color);
+          }
+          
     
-
+    
     .list-work {
         display: flex;
         width: 1200px;
@@ -772,6 +866,8 @@ body {
 
     .link-footer.link {
         margin-bottom: 20px;
+        transition: fill var(--animation);
+        transition: background-color var(--transition-whole);
     }
 
     .adress-nav {
@@ -835,7 +931,7 @@ body {
     /*Портфолио*/
 
     
-    .filter-section {
+    .portfolio-section {
         padding-top: 94px;
         padding-bottom: 94px;
     }
@@ -871,26 +967,82 @@ body {
         
     }
 
-    .cards-item {
-        width: 370px;
-        margin-right: 30px;
-        border: 1px solid #EEEEEE;
-        margin-bottom: 30px;
+    .examples-item {
+        --grid-item: 3;
     }
+
+    .grid-item {
+        flex-basis: calc((100% - 30px * var(--grid-item)) / var(--grid-item));
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+
+    .examples-link:hover,
+    .examples-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+
+    .examples-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+  }
+
+    .examples-overlay {
+        position: relative;
+        width: 370px;
+        height: 294px;
+        overflow: hidden;
+    }
+
+    .item-examples-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(33, 150, 243, 0.9);
+        opacity: 0;
+        transform: translateY(0);
+        transition: var(--transition-transform);
+      }
+      
+      .examples-link:focus .item-examples-overlay,
+      .examples-link:hover .item-examples-overlay {
+        transform: translateY(-100%);
+        opacity: 1;
+      }
+
+    .examples-overlay .text-examples {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: inline-block;
+        width: 322px;
+        font-size: 18px;
+        line-height: 1.56;
+        letter-spacing: 0.03em;
+        text-align: start;
+        color: #fff;
+    }
+  
 
     .cards-item::before {
         display: inline-block;
         position: absolute;
+        top: 0;
+        left: 0;
         content: "";
         width: 370px;
-        height: 294px;
+        height: 300px;
         background-color: rgba(33, 150, 243, 0.9);
 
         opacity: 0;
     }
 
     .cards-item:hover::before {
+        
         opacity: 1;
+
     }
 
     .cards-item:focus::before {
@@ -906,7 +1058,6 @@ body {
     }
 
     .cards-item-page {
-        
         position: absolute;
         top: 50px;
         left: 24px;
