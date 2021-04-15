@@ -893,15 +893,17 @@ body {
         
     }
 
+
     .footer-blok {
         display: flex;
+        align-items: baseline;
         width: 1200px;
         padding-top: 60px;
         padding-bottom: 60px;
     }
 
     .page-footer {
-        padding-bottom: 20px;
+        margin-bottom: 20px;;
         font-style: normal;
         font-weight: bold;
         font-size: 14px;
