@@ -282,7 +282,6 @@ body {
   .social-icons-footer {
     display: flex;
     justify-content: center;
-    padding-bottom: 30px;
     transition: fill var(--animation);
 }
 
@@ -834,8 +833,7 @@ body {
 
     .container-mark-work {
         padding-top: 94px;
-        padding-bottom: 94px;
-        
+                
     }
 
     .container-teem {
