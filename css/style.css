@@ -131,6 +131,7 @@ body {
 .container-link {
     display: flex;
     transition: color var(--animation);
+    margin-left: auto;
 }
 .link-mailto {
     /*margin-right: 50px;*/
@@ -657,8 +658,7 @@ body {
     .navigation {
         display: flex;
         align-items: center;
-        margin-right: 305px;
-        
+               
     }
 
     .container-list {
