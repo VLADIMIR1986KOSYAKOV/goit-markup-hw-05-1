@@ -282,7 +282,7 @@ body {
   .social-icons-footer {
     display: flex;
     justify-content: center;
-    transition: fill var(--animation);
+    transition: background-color var(--transition-whole);
 }
 
   .social-icons-link {
@@ -292,7 +292,7 @@ body {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    transition: fill var(--animation);
+    transition: background-color var(--transition-whole);
   }
 
   .social-icons-link-footer {
@@ -303,7 +303,7 @@ body {
     height: 44px;
     background-color: rgba(255, 255, 255, 0.1);;
     border-radius: 50%;
-    transition: fill var(--animation);
+    transition: background-color var(--transition-whole);
   }
 
   .social-icons-link-footer:hover {
@@ -324,7 +324,7 @@ body {
 
   .icon-footer {
     fill: var(--icon-footer-color);
-    transition: fill var(--animation);
+    transition: fill var(--transition-whole);
   }
 
   .list-command a {
@@ -338,7 +338,7 @@ body {
 
   .social-icons-link:hover .icon,
   .social-icons-link:focus .icon {
-      fill: currentColor;
+    fill: #fff;
   }
 
   .social-icons-link-footer:hover,
@@ -402,9 +402,13 @@ body {
     fill: var(--accent-color);
     transition: color var(--transition-whole);  
   }
+
+  .icon {
+    transition: fill var(--transition-whole);
+  }
   
   .client-icon {
-   display: flex;
+    display: flex;
     max-height: 45px;
   }
 
@@ -419,7 +423,16 @@ body {
     box-sizing: border-box;
     border-radius: 4px;
     transition: color var(--transition-whole);
-  }
+    
+}
+
+.clients-icon-link .icon {
+    fill: currentColor;
+}
+
+.icon .client-icon {
+    fill: var(--icon-color);
+}
 
   .clients-block {
       padding-top: 94px;
