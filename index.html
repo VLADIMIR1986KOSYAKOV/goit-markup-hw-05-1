@@ -351,7 +351,46 @@
     </footer>
     <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-            <button class="btn-close" data-modal-close>X</button>
+            <button class="btn-close" data-modal-close>
+                <svg class="btn-close-icon">
+                    <use href="./images/icons.svg#icon-Vector-3"></use>
+                </svg>
+            </button>
+            <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+            <form class="js-speaker-form">                
+                
+                <label for="name" class="modal-label">Имя</label>
+                <input type="text" name="name" id="name">
+                <svg class="modal-icon-name">
+                    <use href="./images/icons.svg#icon-Vector"></use>
+                </svg>
+                <br>            
+
+                <label for="tel" class="modal-label">Телефон</label>
+                <input type="tel" name="tel" id="tel">
+                <svg class="modal-icon-tel">
+                    <use href="./images/icons.svg#icon-Vector-1"></use>
+                </svg>
+                <br>
+
+                <label for="mail" class="modal-label">Почта</label>
+                <input type="email" name="mail" id="mail">
+                <svg class="modal-icon-mail">
+                    <use href="./images/icons.svg#icon-Vector-2"></use>
+                </svg>
+                <br>
+                
+                <label class="modal-label">Комментарии</label>
+                <textarea placeholder="Введите текст"></textarea>
+                <br>
+
+                <input type="checkbox" name="" id="">
+                <label class="modal-page">Соглашаюсь с рассылкой и принимаю Условия договора</label>
+                <br>
+                
+                <button type="submit">Отправить</button>
+
+            </form>
         </div>
     </div>
     <script src="./JS/modal.js"></script>

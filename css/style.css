@@ -63,6 +63,7 @@ body {
     --animation: 250ms ease-in;
     --transition-transform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-whole: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --examples-border-color:#EEEEEE;
     }
 
 .visually-hidden {
@@ -223,20 +224,14 @@ body {
     background: #F5F4FA;
     border-radius: 4px;
     border: none;
-    transition: box-shadow var(--transition-whole), background-color var(--transition-whole);
+    transition: box-shadow var(--transition-whole), background-color var(--transition-whole), color var(--title-color);
 }
 
-.button-portfolio:hover {
-    color: var(--text-button);
-    background-color: var(--bg-button);
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-    0px 1px 2px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-}
-
+.button-portfolio:hover,
 .button-portfolio:focus {
-    color: var(--text-button);
-    background-color: var(--bg-button);
+  background-color: var(--bg-button);
+  color: var(--text-button);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .title {
@@ -988,11 +983,10 @@ body {
     .cards-list {
         display: flex;
         flex-wrap: wrap;
-        width: 1200px;
+        width: 1205px;
         margin-right: auto;
         margin-left: auto;
         align-items: center;       
-        
     }
 
     .examples-item {
@@ -1001,7 +995,7 @@ body {
 
     .grid-item {
         flex-basis: calc((100% - 30px * var(--grid-item)) / var(--grid-item));
-        margin-left: 30px;
+        margin-left: 28px;
         margin-top: 30px;
     }
 
@@ -1129,12 +1123,13 @@ body {
     
 
     .portfolio-blok {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding: 20px 24px;
+    border-left: 1px solid var(--examples-border-color);
+    border-right: 1px solid var(--examples-border-color);
+    border-bottom: 1px solid var(--examples-border-color);
           
     }
+    
 
     .backdrop {
         position: fixed;
@@ -1159,8 +1154,8 @@ body {
         left: 50%;
         transform: translate(-50%, -50%) scale(1);
         width: 100%;
-        max-width: 450px;
-        min-height: 450px;
+        max-width: 528px;
+        min-height: 581px;
         padding: 40px 30px;
         background-color: #fff;
         border-radius: 30px;
@@ -1172,8 +1167,8 @@ body {
 
     .btn-close {
         position: absolute;
-        top: 25px;
-        right: 25px;
+        top: 15px;
+        right: 15px;
         width: 30px;
         height: 30px;
         border: none;
@@ -1184,8 +1179,76 @@ body {
     transition: var(--transition-transform);
     }
 
+    .btn-close:hover .btn-close-icon{
+        fill: var(--accent-color);
+    }
+
     .is-hidden .modal {
         transform: translate(0, -100%) scale(0.2);
+    }
+
+    /*Формы модального окна*/
+
+    .modal-title {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 1.15;
+        text-align: center;
+        letter-spacing: 0.03em;
+        color: #212121;
+        
+    }
+
+    .modal-icon-name {
+        width: 12px;
+        height: 12px;
+    }
+
+    .modal-icon-tel {
+        width: 13px;
+        height: 13px;
+    }
+
+    .modal-icon-mail {
+        width: 15px;
+        height: 12px;
+    }
+
+    .btn-close-icon {
+        width: 11px;
+        height: 11px;
+    }
+
+    .modal-label {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.01em;
+        color: #757575;
+    }
+
+    ::placeholder {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.01em;
+        color: rgba(117, 117, 117, 0.5);
+    }
+
+    .modal-page {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.71;
+        letter-spacing: 0.03em;
+        color: #757575;
     }
    
     
